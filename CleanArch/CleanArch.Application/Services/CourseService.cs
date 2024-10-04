@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Application.Services
 {
-    public class CourceService : ICourceService
+    public class CourseService : ICourseService
     {
         private ICourseRepository _courseRespostiry;
 
-        public CourceService(ICourseRepository courseRespostiry)
+        public CourseService(ICourseRepository courseRespostiry)
         {
             _courseRespostiry = courseRespostiry;
         }
