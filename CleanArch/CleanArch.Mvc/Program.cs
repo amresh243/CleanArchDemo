@@ -3,6 +3,7 @@ using CleanArch.Infra.IoC;
 using CleanArch.Mvc.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,8 @@ builder.Services.AddDbContext<UniversityDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("UniversityDBConnection"));
 });
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 RegisterServices(builder.Services);
 
