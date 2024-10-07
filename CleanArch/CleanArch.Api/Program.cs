@@ -1,3 +1,4 @@
+using CleanArch.Api.Configurations;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using MediatR;
@@ -28,6 +29,8 @@ builder.Services.AddSwaggerGen(cfg =>
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 RegisterServices(builder.Services);
+
+builder.Services.RegisterAutoMapper();
 
 var app = builder.Build();
 

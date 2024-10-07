@@ -23,7 +23,7 @@ namespace CleanArch.Infra.Data.Repository
             _context.Courses.Add(course);
         }
 
-        public IEnumerable<Course> GetCourses()
+        public IQueryable<Course> GetCourses()
         {
             return _context.Courses;
         }
